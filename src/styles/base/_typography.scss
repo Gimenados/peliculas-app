@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+
+h1 {
+  padding: 0 !important;
+  text-align: center;
+  animation: fadeSlide 1s ease-out;
+}
+
+.title-pelicula {
+  animation: slideIn 1s ease-out;
+  background-color: rgba(240, 248, 255, 0) !important;
+  font-weight: 900;
+  padding: 0 !important;
+  font-size: 3rem !important;
+  text-transform: uppercase;
+  background: linear-gradient(to right, rgb(54, 5, 5), red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+}

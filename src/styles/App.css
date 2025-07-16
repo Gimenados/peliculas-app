@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap");
+h1 {
+  padding: 0 !important;
+  text-align: center;
+  animation: fadeSlide 1s ease-out;
+}
+
+.title-pelicula {
+  animation: slideIn 1s ease-out;
+  background-color: rgba(240, 248, 255, 0) !important;
+  font-weight: 900;
+  padding: 0 !important;
+  font-size: 3rem !important;
+  text-transform: uppercase;
+  background: linear-gradient(to right, rgb(54, 5, 5), red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+header {
+  display: flex;
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+
+header nav {
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-weight: 900;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+header nav ul li:hover,
+header nav ul li a:hover {
+  background-color: rgb(218, 22, 22);
+  color: white;
+  font-weight: bold;
+}
+
+img {
+  padding: 0.1rem;
+  width: 44px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  padding: 0 !important;
+  text-align: center;
+}
+
+footer {
+  padding-left: 0.5rem;
+  border-top: 1px solid white;
+}
+
+footer p {
+  padding: 0.2rem 0 0 0.5rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.494);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Bungee Tint", sans-serif !important;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  padding: 50px;
+  text-align: center;
+  box-shadow: rgba(227, 225, 225, 0.2352941176) 5px 6px 35px 9px;
+  width: 50vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.modal-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(115deg, rgba(0, 0, 0, 0.938) 37%, rgba(56, 13, 0, 0) 80%);
+  pointer-events: none;
+}
+
+.modal-content .modal-title,
+.modal-content p,
+.modal-content .button-trailer {
+  position: relative;
+  z-index: 1;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#modal-description {
+  padding: 1rem 0;
+  width: 30%;
+  text-align: start;
+}
+
+#modal.mostrar {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.imgModal {
+  display: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: darkred;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.oculto {
+  display: none !important;
+}
+
+#iframe-fullscreen,
+.videoModal {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+
+.section-buscar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 95vw;
+  margin: 20px 0;
+}
+
+.section-buscar input,
+.section-buscar select {
+  width: 25vw;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+.section-buscar select {
+  margin-top: 0.5rem;
+}
+
+.Search {
+  outline: none;
+  width: 250px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  transition: border-bottom 0.5s;
+}
+
+select option {
+  font-weight: 800 !important;
+}
+
+.formMovie {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.form-image {
+  width: 75vh !important;
+  height: auto !important;
+}
+
+.formMovie form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 2vw;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.formMovie form label,
+.formMovie form input,
+.formMovie form textarea {
+  padding: 1rem;
+  margin: 0.4rem 0;
+  background: transparent;
+  font-weight: 900;
+  border: none;
+  border-bottom: 1px solid white;
+  text-transform: uppercase;
+}
+
+.form-button {
+  width: auto !important;
+  padding-top: 0.5rem;
+}
+
+button,
+main ul li button {
+  outline: none;
+  border: 2px solid rgb(196, 17, 17);
+  border-bottom: 4px solid rgb(196, 17, 17);
+  width: 100px;
+  margin: 0 0.5rem;
+  height: 40px;
+  background-color: rgb(220, 20, 20);
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+}
+
+button:hover {
+  border: 2px solid rgb(211, 211, 211);
+  border-bottom: 4px solid rgb(211, 211, 211);
+  background-color: white;
+  color: black !important;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+main ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.3rem;
+  box-shadow: 1px 6px 20px 9px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  min-height: 320px;
+  background: #1E1E1E;
+  border-radius: 8px;
+}
+
+main ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+main ul li img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+main ul li h2 {
+  font: 700 1rem sans-serif !important;
+  margin-top: 1rem;
+}
+
+.container-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+video {
+  width: 100vh;
+  height: 100vw;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  transform: rotate(270deg);
+  overflow: hidden;
+  /* El 'position: fixed' y luego 'position: absolute' tienen conflicto, */
+  /* te dejo solo position: absolute que se aplica en general */
+  position: absolute;
+}
+
+.section-buscar {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 95vw;
+  margin: 20px 0;
+}

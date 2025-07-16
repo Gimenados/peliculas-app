@@ -1,0 +1,22 @@
+button,
+main ul li button {
+  outline: none;
+  border: 2px solid $button-border-color;
+  border-bottom: 4px solid $button-border-color;
+  width: 100px;
+  margin: 0 0.5rem;
+  height: 40px;
+  background-color: $button-bg-color;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+}
+
+button:hover {
+  border: 2px solid $button-hover-border-color;
+  border-bottom: 4px solid $button-hover-border-color;
+  background-color: white;
+  color: black !important;
+  font-weight: 800;
+  cursor: pointer;
+}
