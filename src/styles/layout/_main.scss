@@ -20,6 +20,7 @@ main ul {
 
 main ul li {
   display: flex;
+  color: $text-color;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -31,10 +32,14 @@ main ul li img {
   height: 280px;
   width: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 main ul li h2 {
   font: 700 1rem sans-serif !important;
   margin-top: 1rem;
+}
+
+span {
+  margin-top: 0.3rem;
 }

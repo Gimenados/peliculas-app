@@ -16,14 +16,6 @@ const moviesData = [
         imgModal: "png/imgModal2.jpg"
     },
     {
-        imgSrc: "https://pics.filmaffinity.com/Harry_Potter_y_la_piedra_filosofal-154820574-mmed.jpg",
-        title: "Harry Potter",
-        year: 2001,
-        description: "En esta primera película, Harry Potter, de once años, descubre que es un mago y que debe ir a Hogwarts a comenzar sus estudios de hechicería y magia, pero su talento no viene solo, se acompaña de una maldición que lo dejará atado a Lord Voldemort, quien buscará su muerte hasta el final de la historia.",
-        buttonTrailer: "https://www.youtube.com/watch?v=LLAaW1EgyY8",
-        imgModal: "png/imgModal3.jpg"
-    },
-    {
         imgSrc:"https://image.tmdb.org/t/p/original/3jec3aNai5gJgU20n5yo30fnpz1.jpg",
         title: "Soldado de elite",
         year: 2022,
@@ -70,14 +62,6 @@ const moviesData = [
         description: "Moana, una joven aventurera, se embarca en un peligroso viaje, para cumplir con una misión incompleta de sus ancestros. Durante su viaje conocerá a su héroe, un semidiós legendario llamado Maui, y juntos recorrerán el oceáno en un viaje lleno de misterios y aventuras.",
         buttonTrailer: "https://www.youtube.com/watch?v=LKFuXETZUsI",
         imgModal: "png/imgModal9.jpg"
-    },
-    {
-        imgSrc: "png/mivillanofavorito.jpeg",
-        title: "Mi villano favorito",
-        year: 2010,
-        description: "Gru (Steve Carell) es un malo que disfruta haciendo maldades a los demás. Desde congelar la cola de clientes en una hamburguesería, hasta crear un globo en forma de animal y dárselo a un niño sólo para tener el placer de hacerlo explotar, Gru hace muchas de las cosas que hemos deseado hacer alguna vez en nuestra vida.",
-        buttonTrailer: "https://www.youtube.com/watch?v=B7S4KodYFCM",
-        imgModal: "png/imgModal10.jpg"
     },
     {
         imgSrc: "https://play-lh.googleusercontent.com/ejxt_xZtEn3RXO3vzLPTsnnHwaotH_h36_eEP3fyRydKBaD0Bh2CLGC_ZyM4UZx8lmg=w240-h480-rw",

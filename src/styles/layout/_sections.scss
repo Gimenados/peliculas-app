@@ -8,19 +8,6 @@
   position: relative;
 }
 
-video {
-  width: 100vh;
-  height: 100vw;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  transform: rotate(270deg);
-  overflow: hidden;
-  /* El 'position: fixed' y luego 'position: absolute' tienen conflicto, */
-  /* te dejo solo position: absolute que se aplica en general */
-  position: absolute;
-}
-
 .section-buscar {
   display: flex;
   justify-content: center;

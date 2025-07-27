@@ -7,6 +7,10 @@ h1 {
   animation: fadeSlide 1s ease-out;
 }
 
+h2 {
+  padding: 0.3rem;
+}
+
 .title-pelicula {
   animation: slideIn 1s ease-out;
   background-color: rgba(240, 248, 255, 0) !important;
@@ -20,24 +24,6 @@ h1 {
   -webkit-text-stroke: 1px white;
 }
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slideIn {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 header {
   background-color: transparent;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -189,6 +175,30 @@ footer p {
   display: none;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+  opacity: 0.8;
+  outline: none !important;
+  box-shadow: none;
+}
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: transparent;
+  border: none;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
 .section-buscar {
   display: flex;
   justify-content: center;
@@ -197,7 +207,7 @@ footer p {
 
 .search-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   align-items: center;
 }
@@ -310,6 +320,7 @@ select option {
   padding: 0.6rem 1rem;
   font-weight: 600;
   border-radius: 8px;
+  justify-content: center;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -341,7 +352,7 @@ main ul li button {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  text-align: center !important;
   text-decoration: none;
   min-width: 100px;
 }
@@ -350,10 +361,8 @@ button:hover,
 main ul li button:hover {
   background-color: white;
   color: #ec1e13;
-  border-color: #ff5e57;
   border-radius: 8px;
   font-weight: 800;
-  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -379,6 +388,7 @@ main ul {
 
 main ul li {
   display: flex;
+  color: rgb(224, 231, 238);
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -390,12 +400,16 @@ main ul li img {
   height: 280px;
   width: 100%;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 main ul li h2 {
   font: 700 1rem sans-serif !important;
   margin-top: 1rem;
+}
+
+span {
+  margin-top: 0.3rem;
 }
 
 .container-section {
@@ -406,19 +420,6 @@ main ul li h2 {
   width: auto;
   overflow: hidden;
   position: relative;
-}
-
-video {
-  width: 100vh;
-  height: 100vw;
-  max-width: none;
-  max-height: none;
-  object-fit: cover;
-  transform: rotate(270deg);
-  overflow: hidden;
-  /* El 'position: fixed' y luego 'position: absolute' tienen conflicto, */
-  /* te dejo solo position: absolute que se aplica en general */
-  position: absolute;
 }
 
 .section-buscar {
