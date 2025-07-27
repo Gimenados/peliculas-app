@@ -5,6 +5,7 @@ import Modal from "./components/Modal";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import FormMovie from "./components/FormMovie";
+import HeroCarousel from "./components/HeroCarousel";
 import moviesData from "./data/MoviesData";
 
 export default function App() {
@@ -41,14 +42,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <section className="container-section" id="container-section">
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "500px" }}>
-          <video autoPlay loop muted playsInline style={{ transform: "rotate(270deg)", transformOrigin: "center" }}>
-            <source src="png/disney.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </section>
-
+      <HeroCarousel />
       <SearchBar onSearch={handleSearch} onYearSearch={handleYearSearch} />
       <MovieList movies={filteredMovies} onShowModal={handleShowModal} />
       <Modal movie={selectedMovie} onClose={handleCloseModal} />
