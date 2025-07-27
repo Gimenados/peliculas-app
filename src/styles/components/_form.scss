@@ -1,23 +1,36 @@
 .section-buscar {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  width: 95vw;
-  margin: 20px 0;
+  margin: 2rem auto;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
 
 .section-buscar input,
 .section-buscar select {
+  color: $text-color !important;                     
   width: 25vw;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-bottom: 1px solid white;
   padding: 0.5rem;
   font-weight: 600;
+  outline: none;
 }
 
 .section-buscar select {
   margin-top: 0.5rem;
+}
+
+// Para que las opciones del select tengan texto negro y fondo blanco
+.section-buscar select option {
+  color: $text-color !important;
+  background-color: rgb(48, 47, 47) !important;
+  font-weight: 800 !important;
 }
 
 .Search {
@@ -52,7 +65,7 @@ select option {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  margin: 2vw;
+  margin: 1vw;
   width: 50%;
   border-radius: 5px;
 }
@@ -60,7 +73,7 @@ select option {
 .formMovie form label,
 .formMovie form input,
 .formMovie form textarea {
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0.4rem 0;
   background: transparent;
   font-weight: 900;
@@ -72,4 +85,54 @@ select option {
 .form-button {
   width: auto !important;
   padding-top: 0.5rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+.input-modern,
+.select-modern {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: black !important; // texto blanco para inputs y selects
+  outline: none;
+  width: 200px;
+}
+
+.input-modern::placeholder {
+  color: $text-color;
+}
+
+.btn-modern {
+  background-color: #e63946;
+  color: $text-color;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-modern:hover {
+  color: $text-color;
+  background-color: #ff4d5a;
+  // transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 1rem;
 }

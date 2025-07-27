@@ -1,22 +1,30 @@
 button,
 main ul li button {
-  outline: none;
-  border: 2px solid $button-border-color;
-  border-bottom: 4px solid $button-border-color;
-  width: 100px;
-  margin: 0 0.5rem;
-  height: 40px;
-  background-color: $button-bg-color;
-  cursor: pointer;
+  all: unset;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 1rem;
   color: white;
-  transition: all 0.5s;
+  background-color: $button-bg-color;
+  border: 2px solid $button-border-color;
+  border-radius: 8px !important;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  text-decoration: none;
+  min-width: 100px;
 }
 
-button:hover {
-  border: 2px solid $button-hover-border-color;
-  border-bottom: 4px solid $button-hover-border-color;
+button:hover,
+main ul li button:hover {
   background-color: white;
-  color: black !important;
+  color: $button-bg-color;
+  border-color: $button-hover-border-color;
+  border-radius: 8px;
   font-weight: 800;
-  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
