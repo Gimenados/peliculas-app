@@ -44,7 +44,7 @@ export default function Modal({ movie, onClose }) {
       }}
     >
       <div
-        className="modal-content"
+        className="modal-content animate-zoom"
         style={{ backgroundImage: `url(${movie.imgModal})` }}
       >
         <button
