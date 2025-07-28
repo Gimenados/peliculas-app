@@ -14,6 +14,7 @@ export default function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   const handleShowModal = (movie) => {
+      console.log("Película seleccionada:", movie);
     setSelectedMovie(movie);
   };
 
