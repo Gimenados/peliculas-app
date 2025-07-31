@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 
 h1 {
   padding: 0 !important;
@@ -13,14 +15,24 @@ h2 {
 }
 
 .title-pelicula {
-  animation: slideIn 1s ease-out;
-  background-color: rgba(240, 248, 255, 0) !important;
-  font-weight: 900;
-  padding: 0 !important;
-  font-size: 3rem !important;
-  text-transform: uppercase;
-  background: linear-gradient(to right, rgb(54, 5, 5), red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: 0 2px 8px rgb(255, 0, 0); // efecto rojo-glow
+  margin-top: 2rem;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 8px #e63946;
+  }
+  50% {
+    text-shadow: 0 0 18px #ff4d5a;
+  }
+}
+
+.title-add-movie {
+  animation: glow 2s infinite;
 }

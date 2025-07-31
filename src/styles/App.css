@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 h1 {
   padding: 0 !important;
   text-align: center;
@@ -12,16 +13,25 @@ h2 {
 }
 
 .title-pelicula {
-  animation: slideIn 1s ease-out;
-  background-color: rgba(240, 248, 255, 0) !important;
-  font-weight: 900;
-  padding: 0 !important;
-  font-size: 3rem !important;
-  text-transform: uppercase;
-  background: linear-gradient(to right, rgb(54, 5, 5), red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: 0 2px 8px rgb(255, 0, 0);
+  margin-top: 2rem;
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 8px #e63946;
+  }
+  50% {
+    text-shadow: 0 0 18px #ff4d5a;
+  }
+}
+.title-add-movie {
+  animation: glow 2s infinite;
 }
 
 header {
@@ -264,9 +274,12 @@ select option {
 .formMovie {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
+  margin: 2rem auto;
+  min-height: 300px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/png/image19.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .form-image {
@@ -277,22 +290,50 @@ select option {
 .formMovie form {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  margin: 1vw;
-  width: 50%;
-  border-radius: 5px;
+  padding: 2rem;
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-.formMovie form label,
+.formMovie form label {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
 .formMovie form input,
 .formMovie form textarea {
-  padding: 0.5rem;
-  margin: 0.4rem 0;
-  background: transparent;
-  font-weight: 900;
-  border: none;
-  border-bottom: 1px solid white;
-  text-transform: uppercase;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.formMovie form input:focus,
+.formMovie form textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #e63946;
+  box-shadow: 0 0 5px #e63946;
+}
+
+.formMovie form input::placeholder,
+.formMovie form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
 }
 
 .form-button {

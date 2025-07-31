@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import formImage from "../assets/png/image19.webp"; // Asegurate que la ruta sea correcta
 
 export default function FormMovie({ onAddMovie }) {
   const [title, setTitle] = useState("");
@@ -41,23 +40,16 @@ export default function FormMovie({ onAddMovie }) {
 
   return (
     <section className="formMovie">
-      <div>
-        <img src={formImage} alt="Formulario película" className="form-image" />
-      </div>
+      
       <form id="formMovie" onSubmit={handleSubmit}>
-        <label htmlFor="title">Título</label>
         <input type="text" id="title" placeholder="Ingrese el título" value={title} onChange={(e) => setTitle(e.target.value)} required />
 
-        <label htmlFor="imgSrcInput">URL de la imagen</label>
         <input type="text" id="imgSrcInput" placeholder="URL de la imagen" value={imgSrc} onChange={(e) => setImgSrc(e.target.value)} required />
 
-        <label htmlFor="description">Descripción</label>
         <textarea id="description" placeholder="Ingrese la descripción" value={description} onChange={(e) => setDescription(e.target.value)} required></textarea>
 
-        <label htmlFor="year">Año</label>
         <input type="number" id="year" placeholder="Ingrese el año" value={year} onChange={(e) => setYear(e.target.value)} required />
 
-        <label htmlFor="trailerUrl">URL del tráiler (opcional)</label>
         <input type="text" id="trailerUrl" placeholder="URL del tráiler" value={trailerUrl} onChange={(e) => setTrailerUrl(e.target.value)} />
 
         <button type="submit" className="form-button">
