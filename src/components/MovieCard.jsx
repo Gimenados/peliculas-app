@@ -1,16 +1,17 @@
-import React from "react";
 
 export default function MovieCard({ movie, onShowModal }) {
   return (
-    <ul>
-      <li>
+    <li className="movie-card">
+      <div className="card-content">
         <img src={movie.imgSrc} alt={movie.title} />
-        {/* <h2>{movie.title}</h2> */}
-        <button className="btn-modern" onClick={() => onShowModal(movie)}>
-          Resumen
-        </button>
-        <span>{movie.year}</span>
-      </li>
-    </ul>
+        <div className="overlay">
+          <h3>{movie.title}</h3>
+          <p>{movie.year}</p>
+          <button className="btn-modern" onClick={() => onShowModal(movie)}>
+            Resumen
+          </button>
+        </div>
+      </div>
+    </li>
   );
 }
