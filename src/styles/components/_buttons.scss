@@ -9,7 +9,7 @@ main ul li button {
   color: white;
   background-color: $button-bg-color;
   border: 2px solid $button-border-color;
-  border-radius: 8px !important;
+  // border-radius: 8px !important;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -22,7 +22,6 @@ button:hover,
 main ul li button:hover {
   background-color: white;
   color: $button-bg-color;
-  border-radius: 8px;
   font-weight: 800;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
