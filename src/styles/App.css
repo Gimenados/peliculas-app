@@ -64,13 +64,37 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-footer {
-  padding-left: 0.5rem;
-  border-top: 1px solid white;
+.footer {
+  color: #aaa;
+  padding: 0 0 2rem 0;
+  text-align: center;
+  margin-top: 0rem;
+  border-top: 1px solid #222;
 }
 
-footer p {
-  padding: 0.2rem 0 0 0.5rem;
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.footer-content p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.footer-content .footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-content .footer-links a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.footer-content .footer-links a:hover {
+  color: #e63946;
 }
 
 .modal {

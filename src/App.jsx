@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import FormMovie from "./components/FormMovie";
 import HeroCarousel from "./components/HeroCarousel";
 import moviesData from "./data/MoviesData";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [movies, setMovies] = useState(moviesData);
@@ -53,9 +54,7 @@ export default function App() {
       </h1>
       <FormMovie onAddMovie={handleAddMovie} />
 
-      <footer>
-        <p>&copy; Listado de peliculas</p>
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -55,7 +55,7 @@ export default function Modal({ movie, onClose }) {
             onClose();
           }}
         >
-          X
+          Cerrar
         </button>
 
         {!showTrailer && (
