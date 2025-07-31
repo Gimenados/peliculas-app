@@ -269,10 +269,6 @@ img {
   outline: none;
 }
 
-.section-buscar select {
-  margin-top: 0.5rem;
-}
-
 .section-buscar select option {
   color: rgb(224, 231, 238) !important;
   background-color: rgb(48, 47, 47) !important;
@@ -369,7 +365,6 @@ select option {
   align-items: center;
   padding: 0.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
 }
 

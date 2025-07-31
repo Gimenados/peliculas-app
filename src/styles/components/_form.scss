@@ -22,10 +22,6 @@
   outline: none;
 }
 
-.section-buscar select {
-  margin-top: 0.5rem;
-}
-
 // Para que las opciones del select tengan texto negro y fondo blanco
 .section-buscar select option {
   color: $text-color !important;
@@ -126,10 +122,9 @@ select option {
 .input-wrapper {
   display: flex;
   align-items: center;
-  // gap: 0.75rem;
   padding: 0.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);
 }
 
@@ -137,10 +132,9 @@ select option {
 .select-modern {
   padding: 0.4rem 0.8rem;
   border: none;
-  // border-radius: 8px;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.15);
-  color: black !important; // texto blanco para inputs y selects
+  color: black !important; 
   outline: none;
   width: 200px;
 }
