@@ -35,25 +35,22 @@ export default function Modal({ movie, onClose }) {
   };
 
   return (
-    <div
-      className="modal mostrar"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: "rgba(0,0,0,0.6)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 9999,
-      }}
-    >
-      <div
-        className="modal-content animate-zoom"
-        style={{ backgroundImage: `url(${imgModal})` }}
-      >
+  <div
+    className="modal mostrar"
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0,0,0,0.6)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 9999,
+    }}
+  >
+    <div className="modal-content animate-zoom">
         <button
           id="close-modal"
           className="close-button"
@@ -64,31 +61,26 @@ export default function Modal({ movie, onClose }) {
         >
           Cerrar
         </button>
+      <div
+        className="modal-image"
+        style={{
+          backgroundImage: `url(${imgModal})`,
+          height: "45%",
+        }}
+      ></div>
+
+      <div className="modal-body">
 
         {!showTrailer && (
           <>
-            <h2 className="modal-title" style={{ marginTop: 0 }}>
-              {title}
-            </h2>
+            <h2 className="modal-title">{title}</h2>
             <p className="modal-description">{description}</p>
             <p className="modal-genres">{genresText}</p>
-            <button
-              className="button-trailer"
-              onClick={handleTrailerClick}
-              style={{
-                marginTop: "1rem",
-                padding: "0.5rem 1rem",
-                cursor: "pointer",
-              }}
-            >
+            <button className="button-trailer" onClick={handleTrailerClick}>
               Ver Trailer
             </button>
             <div className="modal-buttons">
-              <button className="btn-circle play">
-                <span role="img" aria-label="play">
-                  ▶️
-                </span>
-              </button>
+              <button className="btn-circle play">▶️</button>
               <button className="btn-circle add">+</button>
               <button className="btn-circle remove">×</button>
               <button className="btn-circle like">👍</button>
@@ -110,5 +102,8 @@ export default function Modal({ movie, onClose }) {
         )}
       </div>
     </div>
-  );
+  </div>
+);
+
+
 }
