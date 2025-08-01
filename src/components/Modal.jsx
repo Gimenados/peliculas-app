@@ -5,7 +5,14 @@ export default function Modal({ movie, onClose }) {
 
   if (!movie) return null;
 
-  const { title, description, buttonTrailer } = movie;
+  console.log("Genres en Modal:", movie.genres);
+
+  const genresText =
+    Array.isArray(movie.genres) && movie.genres.length > 0
+      ? movie.genres.join(" · ")
+      : "Sin género";
+
+  const { title, description, buttonTrailer, imgModal } = movie;
 
   const getVideoId = (url) => {
     if (!url) return null;
@@ -36,7 +43,7 @@ export default function Modal({ movie, onClose }) {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: "rgba(0,0,0,0.6)", // oscurece toda la pantalla de fondo
+        backgroundColor: "rgba(0,0,0,0.6)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -45,7 +52,7 @@ export default function Modal({ movie, onClose }) {
     >
       <div
         className="modal-content animate-zoom"
-        style={{ backgroundImage: `url(${movie.imgModal})` }}
+        style={{ backgroundImage: `url(${imgModal})` }}
       >
         <button
           id="close-modal"
@@ -64,6 +71,7 @@ export default function Modal({ movie, onClose }) {
               {title}
             </h2>
             <p className="modal-description">{description}</p>
+            <p className="modal-genres">{genresText}</p>
             <button
               className="button-trailer"
               onClick={handleTrailerClick}
@@ -75,6 +83,16 @@ export default function Modal({ movie, onClose }) {
             >
               Ver Trailer
             </button>
+            <div className="modal-buttons">
+              <button className="btn-circle play">
+                <span role="img" aria-label="play">
+                  ▶️
+                </span>
+              </button>
+              <button className="btn-circle add">+</button>
+              <button className="btn-circle remove">×</button>
+              <button className="btn-circle like">👍</button>
+            </div>
           </>
         )}
 
