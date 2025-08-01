@@ -73,11 +73,11 @@ export default function Modal({ movie, onClose }) {
 
         {!showTrailer && (
           <>
-            <h2 className="modal-title">{title}</h2>
+            <h3 className="titulo-banner">{title}</h3>
             <p className="modal-description">{description}</p>
             <p className="modal-genres">{genresText}</p>
             <button className="button-trailer" onClick={handleTrailerClick}>
-              Ver Trailer
+              <span style={{ color: "black", fontWeight: "bold" }}>►</span> Ver Trailer
             </button>
             <div className="modal-buttons">
               <button className="btn-circle play">▶️</button>
