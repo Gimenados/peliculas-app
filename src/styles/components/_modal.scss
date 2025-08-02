@@ -128,13 +128,19 @@
   display: none !important;
 }
 
-#iframe-fullscreen,
-.videoModal {
+#iframe-fullscreen {
   width: 100%;
   height: 100%;
   border: none;
   display: none;
 }
+
+.videoModal {
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 10000;
+}
+
 
 @keyframes fadeInZoom {
   from {

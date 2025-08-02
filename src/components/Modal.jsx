@@ -26,13 +26,16 @@ export default function Modal({ movie, onClose }) {
 
   const videoId = getVideoId(buttonTrailer);
 
-  const handleTrailerClick = () => {
-    if (videoId) {
-      setShowTrailer(true);
-    } else {
-      alert("No se pudo obtener el video del tráiler.");
-    }
-  };
+ const handleTrailerClick = () => {
+  console.log("Clic en botón trailer");
+  console.log("Video ID al hacer clic:", videoId);
+  if (videoId) {
+    setShowTrailer(true);
+  } else {
+    alert("No se pudo obtener el video del tráiler.");
+  }
+};
+
 
   return (
   <div
@@ -103,6 +106,4 @@ export default function Modal({ movie, onClose }) {
     </div>
   </div>
 );
-
-
 }
