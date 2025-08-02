@@ -8,6 +8,7 @@ import imgModal11 from "../assets/png/imgModal11.jpg";
 import imgModal12 from "../assets/png/imgModal12.jpg";
 import imgModal16 from "../assets/png/imgModal6.jpg";
 import imgModal7 from "../assets/png/imgModal7.jpg";
+import imgModal20 from "../assets/png/imgModal20.webp"
 
 const moviesData = [
     {
@@ -55,7 +56,7 @@ const moviesData = [
         imgModal: imgModal16,
     },
     {
-        imgSrc: "https://pics.filmaffinity.com/Shrek-903764423-large.jpg",
+        imgSrc: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2016/07/shrek-5-confirmada.jpg?tf=1080x",
         title: "Shrek",
         genres: ["Comedia", "Infantil"],
         year: 2008,
@@ -98,6 +99,24 @@ const moviesData = [
         description: "Los Hombres de Negro son agentes secretos dedicados a mantener en secreto la presencia extraterrestre en la Tierra. Con trajes oscuros y tecnología avanzada, enfrentan amenazas alienígenas mientras protegen a la humanidad.",
         buttonTrailer: "https://www.youtube.com/watch?v=9fEyWV4d7dw",
         imgModal: imgModal12,
+    },
+    {
+        imgSrc: "https://elcomercio.pe/resizer/v2/Q2ATMCCSUFA77LUH2SM2SQ5E2Y.jpg?auth=035dd6759328826316b4d70c3f2188fc7fa728706c97dddf1975d4c21e92dba6&width=1200&height=810&quality=75&smart=true",
+        title: "My Oxford Year",
+        genres: ["Drama", "Romance", "Familiar"],
+        year: 2025,
+        description: "Una joven estadounidense llega a Oxford con grandes ambiciones políticas, pero su vida da un giro inesperado cuando se enamora de un profesor con un secreto que cambiará su destino. Una historia sobre amor, decisiones y cómo un solo año puede transformarlo todo.",
+        buttonTrailer: "https://www.youtube.com/watch?v=YzWx_N8Hgzg",
+        imgModal: imgModal20,
+    },
+    {
+        imgSrc: "https://variety.com/wp-content/uploads/2016/06/cars.jpg?w=1000&h=667&crop=1&resize=910%2C607",
+        title: "Cars",
+        genres: ["Drama", "Infantil", "Familiar"],
+        year: 2006,
+        description: "Un ambicioso auto de carreras llamado Rayo McQueen descubre el verdadero significado de la amistad y el trabajo en equipo cuando queda atrapado en un pequeño pueblo olvidado llamado Radiator Springs.",
+        buttonTrailer: "https://www.youtube.com/watch?v=YzWx_N8Hgzg",
+        imgModal: imgModal20,
     },
 ];
 

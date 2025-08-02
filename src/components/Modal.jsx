@@ -70,7 +70,6 @@ export default function Modal({ movie, onClose }) {
       ></div>
 
       <div className="modal-body">
-
         {!showTrailer && (
           <>
             <h3 className="titulo-banner">{title}</h3>
