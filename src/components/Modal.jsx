@@ -65,10 +65,13 @@ export default function Modal({ movie, onClose }) {
           Cerrar
         </button>
       <div
-        className="modal-image"
-        style={{
-          backgroundImage: `url(${imgModal})`,
-          height: "45%",
+         className="modal-image"
+         style={{
+         backgroundImage: `url(${imgModal})`,
+         backgroundSize: "cover",
+         backgroundPosition: "center",
+         height: "300px",
+         width: "100%",
         }}
       ></div>
 
@@ -92,14 +95,14 @@ export default function Modal({ movie, onClose }) {
 
         {showTrailer && (
           <iframe
-            id="trailer-movie"
-            className="videoModal"
-            width="100%"
-            height="315"
-            allowFullScreen
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title={`Trailer de ${title}`}
-            style={{ marginTop: "1rem", borderRadius: "8px" }}
+              id="trailer-movie"
+              className="videoModal"
+              width="100%"
+              height="450"
+              allowFullScreen
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+              title={`Trailer de ${title}`}
+              style={{ border: "none" }}
           ></iframe>
         )}
       </div>

@@ -9,6 +9,7 @@ import imgModal12 from "../assets/png/imgModal12.jpg";
 import imgModal16 from "../assets/png/imgModal6.jpg";
 import imgModal7 from "../assets/png/imgModal7.jpg";
 import imgModal20 from "../assets/png/imgModal20.webp"
+import imgModal21 from "../assets/png/imgModal21.jpeg"
 
 const moviesData = [
     {
@@ -116,7 +117,7 @@ const moviesData = [
         year: 2006,
         description: "Un ambicioso auto de carreras llamado Rayo McQueen descubre el verdadero significado de la amistad y el trabajo en equipo cuando queda atrapado en un pequeño pueblo olvidado llamado Radiator Springs.",
         buttonTrailer: "https://www.youtube.com/watch?v=YzWx_N8Hgzg",
-        imgModal: imgModal20,
+        imgModal: imgModal21,
     },
 ];
 
