@@ -12,7 +12,7 @@ export default function Modal({ movie, onClose }) {
       ? movie.genres.join(" · ")
       : "Sin género";
 
-  const { title, description, buttonTrailer, imgModal } = movie;
+  const { title, description, buttonTrailer, imgModal, distribution } = movie;
 
   const getVideoId = (url) => {
     if (!url) return null;
@@ -34,79 +34,6 @@ export default function Modal({ movie, onClose }) {
   }
 };
 
-
-//   return (
-//   <div
-//     className="modal mostrar"
-//     style={{
-//       position: "fixed",
-//       top: 0,
-//       left: 0,
-//       right: 0,
-//       bottom: 0,
-//       backgroundColor: "rgba(0,0,0,0.6)",
-//       display: "flex",
-//       justifyContent: "center",
-//       alignItems: "center",
-//       zIndex: 9999,
-//     }}
-//   >
-//     <div className="modal-content animate-zoom">
-//         <button
-//           id="close-modal"
-//           className="close-button"
-//           onClick={() => {
-//             setShowTrailer(false);
-//             onClose();
-//           }}
-//         >
-//           Cerrar
-//         </button>
-//       <div
-//          className="modal-image"
-//          style={{
-//          backgroundImage: `url(${imgModal})`,
-//          backgroundSize: "cover",
-//          backgroundPosition: "center",
-//          height: "300px",
-//          width: "100%",
-//         }}
-//       ></div>
-
-//       <div className="modal-body">
-//         {!showTrailer && (
-//           <>
-//             <h3 className="titulo-banner">{title}</h3>
-//             <p className="modal-description">{description}</p>
-//             <p className="modal-genres">{genresText}</p>
-//             <button className="button-trailer" onClick={handleTrailerClick}>
-//               <span style={{ color: "black", fontWeight: "bold" }}>►</span> Ver Trailer
-//             </button>
-//             <div className="modal-buttons">
-//               <button className="btn-circle play">▶️</button>
-//               <button className="btn-circle add">+</button>
-//               <button className="btn-circle remove">×</button>
-//               <button className="btn-circle like">👍</button>
-//             </div>
-//           </>
-//         )}
-
-//         {showTrailer && (
-//           <iframe
-//               id="trailer-movie"
-//               className="videoModal"
-//               width="100%"
-//               height="450"
-//               allowFullScreen
-//               src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-//               title={`Trailer de ${title}`}
-//               style={{ border: "none" }}
-//           ></iframe>
-//         )}
-//       </div>
-//     </div>
-//   </div>
-// );
 return (
   <div
     className="modal mostrar"
@@ -190,7 +117,8 @@ return (
 
           <div className="modal-body" style={{ padding: "1.5rem", color: "white" }}>
             <h3 className="titulo-banner">{title}</h3>
-            <p className="modal-description">{description}</p>
+            <p className="modal-genres" style={{fontWeight: "bold" }}>Reparto: {distribution}</p>
+            <p  className="modal-description">{description}</p>
             <p className="modal-genres">{genresText}</p>
             <button className="button-trailer" onClick={handleTrailerClick}>
               <span style={{ color: "black", fontWeight: "bold" }}>►</span> Ver Trailer

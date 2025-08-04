@@ -25,3 +25,84 @@ main ul li button:hover {
   font-weight: 800;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+//BOTONES MODAL
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: start;
+}
+
+.modal-buttons button {
+  background-color: #222;
+  border: 2px solid #444;
+  color: #eee;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.modal-buttons button:hover {
+  background-color: #e50914; /* rojo Netflix */
+  border-color: #e50914;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.7);
+}
+
+.modal-buttons button:active {
+  transform: scale(0.95);
+}
+
+.modal-buttons button.play {
+  background-color: #1db954; /* verde Spotify para diferenciar */
+  border-color: #1db954;
+}
+
+.modal-buttons button.play:hover {
+  background-color: #17a84b;
+  border-color: #17a84b;
+  box-shadow: 0 4px 10px rgba(23, 168, 75, 0.7);
+}
+
+.modal-buttons button.add {
+  background-color: #0063e5; /* azul */
+  border-color: #0063e5;
+}
+
+.modal-buttons button.add:hover {
+  background-color: #004bb5;
+  border-color: #004bb5;
+  box-shadow: 0 4px 10px rgba(0, 75, 181, 0.7);
+}
+
+.modal-buttons button.remove {
+  background-color: #cc0000; /* rojo fuerte */
+  border-color: #cc0000;
+}
+
+.modal-buttons button.remove:hover {
+  background-color: #990000;
+  border-color: #990000;
+  box-shadow: 0 4px 10px rgba(153, 0, 0, 0.7);
+}
+
+.modal-buttons button.like {
+  background-color: #f5a623; /* naranja */
+  border-color: #f5a623;
+}
+
+.modal-buttons button.like:hover {
+  background-color: #d48806;
+  border-color: #d48806;
+  box-shadow: 0 4px 10px rgba(212, 136, 6, 0.7);
+}
