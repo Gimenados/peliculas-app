@@ -1,138 +1,118 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Modal({ movie, onClose }) {
   const [showTrailer, setShowTrailer] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  if (!movie) return null;
+  useEffect(() => {
+    if (movie) {
+      setVisible(true);
+      setShowTrailer(false);
+    }
+  }, [movie]);
 
-  console.log("Genres en Modal:", movie.genres);
+  const handleClose = () => {
+    setVisible(false);
+    setTimeout(() => {
+      onClose();
+      setShowTrailer(false);
+    }, 350);
+  };
+
+  if (!movie && !visible) return null;
+
+  const { title, description, buttonTrailer, imgModal, distribution, genres } =
+    movie;
 
   const genresText =
-    Array.isArray(movie.genres) && movie.genres.length > 0
-      ? movie.genres.join(" · ")
+    Array.isArray(genres) && genres.length > 0
+      ? genres.join(" · ")
       : "Sin género";
-
-  const { title, description, buttonTrailer, imgModal, distribution } = movie;
 
   const getVideoId = (url) => {
     if (!url) return null;
-    if (url.includes("v=")) {
-      return url.split("v=")[1].split("&")[0];
-    } else if (url.includes("youtu.be/")) {
-      return url.split("youtu.be/")[1].split("?")[0];
-    }
+    if (url.includes("v=")) return url.split("v=")[1].split("&")[0];
+    if (url.includes("youtu.be/")) return url.split("youtu.be/")[1];
     return null;
   };
 
   const videoId = getVideoId(buttonTrailer);
 
- const handleTrailerClick = () => {
-  if (videoId) {
-    setShowTrailer(true);
-  } else {
-    alert("No se pudo obtener el video del tráiler.");
-  }
-};
+  const handleTrailerClick = () => {
+    if (videoId) setShowTrailer(true);
+  };
 
-return (
-  <div
-    className="modal mostrar"
-    style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0,0,0,0.6)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      zIndex: 9999,
-    }}
-  >
+  return (
     <div
-      className="modal-content animate-zoom"
-      style={{
-        width: showTrailer ? "80%" : "90%",
-        maxWidth: "900px",
-        backgroundColor: "black",
-        borderRadius: "10px",
-        overflow: "hidden",
-        padding: 0,
-        position: "relative",
-        height: showTrailer ? "500px" : "auto",
-      }}
+      className={`modal ${visible ? "mostrar" : ""}`}
+      onClick={handleClose}
     >
-      {/* Botón Cerrar */}
-      <button
-        id="close-modal"
-        className="close-button"
-        onClick={() => {
-          setShowTrailer(false);
-          onClose();
-        }}
+      <div
+        className="modal-content"
+        onClick={(e) => e.stopPropagation()}
         style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          zIndex: 1000,
-          backgroundColor: "darkred",
-          color: "white",
-          padding: "0.5rem 1rem",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
+          width: showTrailer ? "80%" : "90%",
+          maxWidth: "900px",
+          height: showTrailer ? "500px" : "auto",
         }}
       >
-        Cerrar
-      </button>
+        {/* BOTÓN CERRAR */}
+        <button className="close-button" onClick={handleClose}>
+          Cerrar
+        </button>
 
-      {showTrailer ? (
-        <iframe
-          id="trailer-movie"
-          className="videoModal"
-          width="100%"
-          height="100%"
-          allowFullScreen
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-          title={`Trailer de ${title}`}
-          style={{
-            border: "none",
-            display: "block",
-            zIndex: 0,
-          }}
-        ></iframe>
-      ) : (
-        <>
-          <div
-            className="modal-image"
-            style={{
-              backgroundImage: `url(${imgModal})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              height: "300px",
-              width: "100%",
-            }}
-          ></div>
+        {showTrailer ? (
+          <iframe
+            className="videoModal"
+            width="100%"
+            height="100%"
+            allowFullScreen
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            title={`Trailer de ${title}`}
+          />
+        ) : (
+          <>
+            {/* IMAGEN */}
+            <div
+              className="modal-image"
+              style={{
+                backgroundImage: `url(${imgModal})`,
+                height: "300px",
+              }}
+            />
 
-          <div className="modal-body" style={{ padding: "1.5rem", color: "white" }}>
-            <h3 className="titulo-banner">{title}</h3>
-            <p className="modal-genres" style={{fontWeight: "bold" }}>Reparto: {distribution}</p>
-            <p  className="modal-description">{description}</p>
-            <p className="modal-genres">{genresText}</p>
-            <button className="button-trailer" onClick={handleTrailerClick}>
-              <span style={{ color: "black", fontWeight: "bold" }}>►</span> Ver Trailer
-            </button>
-            <div className="modal-buttons">
-              <button className="btn-circle play">▶️</button>
-              <button className="btn-circle add">+</button>
-              <button className="btn-circle remove">×</button>
-              <button className="btn-circle like">👍</button>
+            {/* CONTENIDO */}
+            <div className="modal-body">
+              <h3 className="titulo-banner">{title}</h3>
+
+              <p className="modal-genres">
+                <strong>Reparto:</strong>{" "}
+                {Array.isArray(distribution)
+                  ? distribution.join(", ")
+                  : "No disponible"}
+              </p>
+
+              <p className="modal-description">{description}</p>
+
+              <p className="modal-genres">{genresText}</p>
+
+              <button
+                className="button-trailer"
+                onClick={handleTrailerClick}
+              >
+                ► Ver Trailer
+              </button>
+
+              <div className="modal-buttons">
+                <button className="btn-circle play">▶️</button>
+                <button className="btn-circle add">+</button>
+                <button className="btn-circle remove">×</button>
+                <button className="btn-circle like">👍</button>
+              </div>
             </div>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
 }

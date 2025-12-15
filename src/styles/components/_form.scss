@@ -15,11 +15,12 @@
 .section-buscar select {
   color: $text-color !important;                     
   width: 25vw;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  padding: 0.5rem;
+  background: none;
+  border-bottom: 1px white solid;
+  padding: 0rem 0.5rem;
   font-weight: 600;
   outline: none;
+  margin: 0rem 1.2rem;
 }
 
 // Para que las opciones del select tengan texto negro y fondo blanco
@@ -122,7 +123,7 @@ select option {
 .input-wrapper {
   display: flex;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0rem 0.5rem;
   border-radius: 12px;
   // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6px);

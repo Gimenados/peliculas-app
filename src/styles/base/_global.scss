@@ -4,14 +4,13 @@
 @import '../utils/variables';
 
 * {
-  font: 200 1rem $main-font;
-  color: $text-color !important;
-  background: radial-gradient(circle, #242424 40%, #1E1E1E 100%); 
+  box-sizing: border-box;
+  font-family: $main-font;
 }
 
 body {
-  background: #1E1E1E;
+  background: radial-gradient(circle, #242424 40%, #1E1E1E 100%);
+  color: $text-color;
   margin: 0;
   animation: fadeIn 1s ease-out;
-  overflow: hidden;
 }

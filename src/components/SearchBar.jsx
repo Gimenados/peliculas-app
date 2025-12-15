@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { FaSearch, FaCalendarAlt } from "react-icons/fa"; // 👈 Agrega esto
+import { FaSearch, FaCalendarAlt, FaStar } from "react-icons/fa";
 
-export default function SearchBar({ onSearch, onYearSearch }) {
+export default function SearchBar({
+  onSearch,
+  onYearSearch,
+  showFavorites,
+  onToggleFavorites,
+}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [year, setYear] = useState("");
 
@@ -18,6 +23,7 @@ export default function SearchBar({ onSearch, onYearSearch }) {
   return (
     <form className="section-buscar" onSubmit={handleSubmit}>
       <div className="search-group">
+        {/* BUSCAR POR TITULO */}
         <div className="input-wrapper">
           <input
             type="text"
@@ -31,6 +37,7 @@ export default function SearchBar({ onSearch, onYearSearch }) {
           </button>
         </div>
 
+        {/* BUSCAR POR AÑO */}
         <div className="input-wrapper">
           <select
             value={year}
@@ -47,10 +54,24 @@ export default function SearchBar({ onSearch, onYearSearch }) {
               );
             })}
           </select>
-          <button type="button" className="btn-modern" onClick={handleYearSearch}>
+          <button
+            type="button"
+            className="btn-modern"
+            onClick={handleYearSearch}
+          >
             <FaCalendarAlt className="icon" /> Buscar
           </button>
         </div>
+
+        {/* ⭐ SOLO FAVORITAS */}
+        <button
+          type="button"
+          className={`favorites-toggle ${showFavorites ? "active" : ""}`}
+          onClick={onToggleFavorites}
+        >
+          <FaStar className="icon" />
+          {showFavorites ? "Favoritas" : "Solo favoritas"}
+        </button>
       </div>
     </form>
   );

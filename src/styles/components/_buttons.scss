@@ -23,7 +23,7 @@ main ul li button:hover {
   background-color: white;
   color: $button-bg-color;
   font-weight: 800;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 //BOTONES MODAL
@@ -105,4 +105,118 @@ main ul li button:hover {
   background-color: #d48806;
   border-color: #d48806;
   box-shadow: 0 4px 10px rgba(212, 136, 6, 0.7);
+}
+
+.btn-modern {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: darken(#e50914, 10%);
+    color: #eee;
+    font-weight: 500;
+    transform: translateY(-1px);
+  }
+}
+
+.button-trailer {
+  padding: 0.4rem 1rem;
+  background-color: aliceblue;
+  color: #000;
+  width: 10rem;
+  border: none;
+ 
+  letter-spacing: 0.5px;
+
+  &:hover {
+    color: #000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ffffffc3 !important;
+}
+}
+
+.modal-buttons button {
+  font-size: 1.1rem;
+  opacity: 0.7;
+  padding: 0.1rem 0.3rem !important;
+}
+
+.modal-buttons button:hover {
+  opacity: 1;
+}
+
+.favorite-btn {
+  all: unset;               // reset total
+  appearance: none;         // elimina estilos nativos
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  font-size: 1.6rem;
+  cursor: pointer;
+
+  color: gold;
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+
+  outline: none;            // 🔥 clave
+  -webkit-tap-highlight-color: transparent; // 🔥 mobile
+
+  transition: transform 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    color: gold;
+    transform: scale(1.2);
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  &.active {
+    color: gold;
+  }
+}
+
+.favorites-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: gold;
+    color: rgb(0, 0, 0);
+  }
+
+  &.active {
+    background-color: gold;
+    color: black;
+    border-color: gold;
+  }
 }

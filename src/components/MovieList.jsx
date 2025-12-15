@@ -1,8 +1,14 @@
 import React, { useRef } from "react";
 import MovieCard from "./MovieCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import EmptyState from "./EmptyState";
 
-export default function MovieList({ movies, onShowModal }) {
+export default function MovieList({
+  movies,
+  onShowModal,
+  favorites,
+  onToggleFavorite,
+}) {
   const scrollRef = useRef();
 
   const scrollLeft = () => {
@@ -15,22 +21,39 @@ export default function MovieList({ movies, onShowModal }) {
 
   if (!movies.length) {
     return (
-      <p style={{ color: "red", textAlign: "center", fontWeight: "bold", width: "100%" }}>
-        No se encontraron películas.
-      </p>
+      <EmptyState
+        message="No encontramos películas con esos filtros"
+        actionText="Agregar una película"
+        onAction={() =>
+          document
+            .getElementById("agregarPelicula")
+            ?.scrollIntoView({ behavior: "smooth" })
+        }
+      />
     );
   }
 
   return (
     <div className="movie-carousel">
-      <button className="scroll-btn left" onClick={scrollLeft}> <FaChevronLeft /> </button>
+      <button className="scroll-btn left" onClick={scrollLeft}>
+        <FaChevronLeft />
+      </button>
+
       <main id="movie-list" ref={scrollRef}>
-        {movies.map((movie, index) => (
-          <MovieCard key={index} movie={movie} onShowModal={onShowModal} />
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.title}
+            movie={movie}
+            onShowModal={onShowModal}
+            isFavorite={favorites.includes(movie.title)}
+            onToggleFavorite={onToggleFavorite}
+          />
         ))}
       </main>
 
-      <button className="scroll-btn right" onClick={scrollRight}> <FaChevronRight /> </button>
+      <button className="scroll-btn right" onClick={scrollRight}>
+        <FaChevronRight />
+      </button>
     </div>
   );
 }
